@@ -1,0 +1,48 @@
+<div *ngIf="loading; then thenBlock else myelseBlock"></div>
+<ng-template #thenBlock>
+  <app-loading></app-loading>
+</ng-template>
+<ng-template #myelseBlock>
+<a  (click)="oo(food)">csccssf</a>
+    <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+      <input type="hidden" name="_id"  [(ngModel)]="food._id">
+        <div class="row">
+          <div class="input-field col s12">
+            <label>Name :
+  
+            </label>
+            <input type="text" name="name"  [(ngModel)]="food.name" placeholder="Enter full name" required>
+            
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <label>available :</label>
+            <input type="text" name="available" [(ngModel)]="food.available" placeholder="Eg : Snr. Developer">
+           
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <label>displayIn :</label>
+            <input type="text" name="displayIn"  [(ngModel)]="food.displayIn" placeholder="Enter office location">
+         
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <label>category :</label>
+            <input type="text" name="category" [(ngModel)]="food.category" placeholder="Salary per annum">
+           
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+           
+            <button class="btn btn-custom right" type="submit" [disabled]="!form.valid">Submit</button>
+          </div>
+        </div>
+      </form>
+
+  
+</ng-template>
